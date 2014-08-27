@@ -1,0 +1,9 @@
+name: BeggarsCoin
+main: eu.valkyr.BeggarsCoin.BeggarsCoin
+version: 0.2
+commands:
+   coin:
+      description: Wirf einem Spieler eine Münze hin!
+      usage: /coin [player]
+      permission: coin
+      permission-message: Mit Geld spielt man nicht!
