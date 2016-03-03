@@ -1,6 +1,6 @@
 name: BeggarsCoin
 main: eu.valkyr.BeggarsCoin.BeggarsCoin
-version: 0.2
+version: 0.3
 commands:
    coin:
       description: Wirf einem Spieler eine Münze hin!

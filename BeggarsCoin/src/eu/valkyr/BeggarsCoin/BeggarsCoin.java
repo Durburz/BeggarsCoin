@@ -1,5 +1,8 @@
 package eu.valkyr.BeggarsCoin;
 
+import java.util.Arrays;
+import java.util.List;
+
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
@@ -7,6 +10,7 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class BeggarsCoin extends JavaPlugin{
@@ -14,6 +18,14 @@ public class BeggarsCoin extends JavaPlugin{
 	ItemStack coin = new ItemStack(Material.GOLD_NUGGET, 1);
 
     public void onEnable(){ 
+    	this.reloadConfig();
+		ItemMeta im = coin.getItemMeta();
+		String name = this.getConfig().getString("name");
+		String text = this.getConfig().getString("lore");
+		List<String> lore = Arrays.asList(text.split("\\s*\\\\n\\s*"));
+		im.setDisplayName(name);
+		im.setLore(lore);
+		coin.setItemMeta(im);
     	this.getLogger().info("BeggarsCoin has been enabled.");
     }
      
